@@ -1,0 +1,9 @@
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+.my-style-icon {
+    color: white !important;
+    text-decoration: none !important;
+}
