@@ -13,13 +13,15 @@
 </head>
 
 <body>
-{% include 'main/navbar.html' %}
-<div class="container-fluid">
-    {% block content %}
+<div class="base-container">
+    {% include 'main/navbar.html' %}
+    <div class="container-fluid">
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+    </div>
+    {% include 'main/footer.html' %}
 </div>
-{% include 'main/footer.html' %}
 
 </body>
 
