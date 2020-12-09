@@ -1,1 +1,38 @@
-<h1>Hello</h1>
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="jumbotron d-flex align-items-center white-background">
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-header">
+                    Prediction
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="card-img-top container justify-content-center img-responsive" id="image"
+                             src="{{ prediction.uploaded_image_url }}" alt="Card image cap">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <div class="row">
+                                <h1>Diagnosis:</h1>
+                                <p>{{ prediction.get_diagnosis_display }} </p>
+                                <h1>Accuracy:</h1>
+                                <p>{{ prediction.accuracy }}</p>
+                                <a class="btn btn-primary btn-block btn-lg" href="{% url 'home' %}">MAKE ANOTHER
+                                    PREDICTION</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
