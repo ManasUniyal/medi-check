@@ -4,9 +4,9 @@
 
 {% block content %}
 
-    <div class="jumbotron d-flex align-items-center white-background">
-        <div class="container">
-            <div class="card text-center">
+    <div class="body-block">
+        <div class="container body-block-container">
+            <div class="card text-center ">
                 <div class="card-header">
                     Upload an X-Ray image for prediction
                 </div>
@@ -15,17 +15,18 @@
                         <img class="card-img-top container justify-content-center img-responsive" id="image"
                              src="{% static 'images/default_image.gif' %}" alt="Card image cap">
                     </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <div class="row">
+                    <div class="col-md-6 upload-block">
+                        <div class="card-body row justify-content-center align-items-center">
+                           
+                            <div class="row justify-content-center align-items-center">
                                 <form id="submit_image_form" method="POST" action="{% url 'result' %}">
                                     {% csrf_token %}
                                     <input type="file" class="btn-danger" id="img_upload" name="uploaded_img"
                                            accept="image/*">
                                 </form>
                             </div>
-                            <div class="row">
-                                <button id="predict_btn" class="btn btn-success">PREDICT</button>
+                            <div class="row justify-content-center align-items-center">
+                                <button id="predict_btn" class="btn btn-primary predict_btn_prop">Analyze</button>
                             </div>
                         </div>
                     </div>
