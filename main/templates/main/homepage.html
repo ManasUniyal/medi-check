@@ -4,9 +4,9 @@
 
 {% block content %}
 
-    <div class="body-block">
-        <div class="container body-block-container">
-            <div class="card text-center ">
+    <div class="jumbotron d-flex align-items-center white-background">
+        <div class="container">
+            <div class="card text-center">
                 <div class="card-header">
                     Upload an X-Ray image for prediction
                 </div>
@@ -15,24 +15,16 @@
                         <img class="card-img-top container justify-content-center img-responsive" id="image"
                              src="{% static 'images/default_image.gif' %}" alt="Card image cap">
                     </div>
-<<<<<<< HEAD
-                    <div class="col-md-6 upload-block">
-                        <div class="card-body row justify-content-center align-items-center">
-                           
-                            <div class="row justify-content-center align-items-center">
-                                <form id="submit_image_form" method="POST" action="{% url 'result' %}">
-=======
                     <div class="col-md-6">
                         <div class="card-body">
                             <div class="row">
                                 <form id="submit_image_form" method="POST" action="{% url 'main:result' %}" enctype="multipart/form-data">
->>>>>>> b0f90e2ccd9024968222f68e19107e8a20e68124
                                     {% csrf_token %}
                                         <input id="img_upload" type="file" name="image" accept="image/*">
                                 </form>
                             </div>
-                            <div class="row justify-content-center align-items-center">
-                                <button id="predict_btn" class="btn btn-primary predict_btn_prop">Analyze</button>
+                            <div class="row">
+                                <button id="predict_btn" class="btn btn-success">PREDICT</button>
                             </div>
                         </div>
                     </div>
