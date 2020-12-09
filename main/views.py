@@ -19,7 +19,6 @@ def result(request):
         fs = FileSystemStorage(location=upload_directory)  # defaults to MEDIA_ROOT
         file = fs.save(uploaded_image.name, uploaded_image)
         upload_file_url = '/images/' + str(request.user.id) + "/uploads/" + file
-        print(upload_file_url)
 
     prediction = Prediction.objects.create(
         accuracy=95.23,
