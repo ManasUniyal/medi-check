@@ -16,3 +16,7 @@ footer {
     color: white !important;
     text-decoration: none !important;
 }
+
+.white-background {
+    background: white;
+}

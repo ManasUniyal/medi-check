@@ -1,7 +1,64 @@
 {% extends 'main/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-    <h1>Hello</h1>
+    <div class="jumbotron d-flex align-items-center white-background">
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-header">
+                    Upload an X-Ray image for prediction
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="card-img-top container justify-content-center img-responsive" id="image"
+                             src="{% static 'images/default_image.gif' %}" alt="Card image cap">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <div class="row">
+                                <form id="submit_image_form" method="POST" action="{% url 'result' %}">
+                                    {% csrf_token %}
+                                    <input type="file" class="btn-danger" id="img_upload" name="uploaded_img"
+                                           accept="image/*">
+                                </form>
+                            </div>
+                            <div class="row">
+                                <button id="predict_btn" class="btn btn-success">PREDICT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const img_upload_btn = document.getElementById("img_upload")
+        const upload_img = document.getElementById("image")
+        img_upload_btn.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.addEventListener("load", function () {
+                    upload_img.setAttribute("src", this.result);
+                });
+                reader.readAsDataURL(file);
+            }
+        })
+
+        const predict_btn = document.getElementById("predict_btn")
+        const form = document.getElementById("submit_image_form")
+            predict_btn.onclick = function (e) {
+                e.preventDefault();
+                form.submit();
+            }
+
+    </script>
 
 {% endblock %}
