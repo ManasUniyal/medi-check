@@ -28,5 +28,10 @@ def result(request):
     context = {
         'prediction': prediction
     }
-
     return render(request, 'main/result.html', context)
+
+
+@require_http_methods(['GET'])
+def history(request):
+    print(request.user)
+    return render(request, 'main/history.html')

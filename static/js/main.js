@@ -1,3 +1,4 @@
+//Handling image upload button
 const img_upload_btn = document.getElementById("img_upload")
 const upload_img = document.getElementById("image")
 img_upload_btn.addEventListener("change", function () {
@@ -11,6 +12,7 @@ img_upload_btn.addEventListener("change", function () {
     }
 })
 
+//Handling prediction button
 const predict_btn = document.getElementById("predict_btn")
 const form = document.getElementById("submit_image_form")
 predict_btn.onclick = function () {

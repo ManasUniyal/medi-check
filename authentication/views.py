@@ -33,3 +33,8 @@ def registerPage(request):
         else:
             print('User already exists')
     return render(request, 'authentication/register.html')
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('main:home')

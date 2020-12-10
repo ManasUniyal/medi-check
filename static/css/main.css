@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');.base-container {
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+.base-container {
     min-height: 100vh; /* will cover the 100% of viewport */
     overflow: hidden;
     display: block;
     position: relative;
     padding-bottom: 80px; /* height of your footer */
     font-family: 'Roboto', sans-serif;
-    background-color: #a0d0f8
-
+    background-color: #eeeeff;
 }
 
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #28282a;
 }
 
 .my-style-icon {
@@ -25,13 +25,11 @@ footer {
     background: white;
 }
 
-
 .navbar-brand{
     font-family: 'Fira Sans', sans-serif;
     font-size: 30px;
     text-shadow: 1px 1px 1px #aaa;
     font-weight: 500;
-  
 }
 
 .navbar-custom{
@@ -43,12 +41,12 @@ footer {
 
 .body-block-container{
     padding: 0px 100px 0px 100px;
-    margin-top: 20px;   
+    margin-top: 20px;
 }
 
 .body-block-analyze{
-    -webkit-box-shadow: 3px 3px 5px 5px #fff;  
-    -moz-box-shadow:    3px 3px 5px 5px #fff;  
+    -webkit-box-shadow: 3px 3px 5px 5px #fff;
+    -moz-box-shadow: 3px 3px 5px 5px #fff;
     box-shadow: 6px 12px 4px #fff;
 }
 
@@ -62,6 +60,10 @@ footer {
     margin-top: 10px;
     width: 22vw;
     font-family: 'Roboto', sans-serif;
-    font-style:bold;
-  
+    font-style: bold;
+}
+
+.style-image{
+    height: 300px;
+    width: 300px;
 }

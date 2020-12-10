@@ -4,36 +4,37 @@
 
 {% block content %}
 
-    <div class="jumbotron d-flex align-items-center white-background">
+    <div class="mt-4 mb-4 d-flex align-items-center">
         <div class="container">
-            <div class="card text-center">
+            <div class="card text-center shadow-lg rounded border-dark">
                 <div class="card-header">
                     Upload an X-Ray image for prediction
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <img class="card-img-top container justify-content-center img-responsive" id="image"
+                        <img class="m-3 card-img-top container justify-content-center img-responsive img-thumbnail"
+                             id="image"
                              src="{% static 'images/default_image.gif' %}" alt="Card image cap">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <div class="row">
-                                <form id="submit_image_form" method="POST" action="{% url 'main:result' %}" enctype="multipart/form-data">
+                                <form id="submit_image_form" method="POST" action="{% url 'main:result' %}"
+                                      enctype="multipart/form-data">
                                     {% csrf_token %}
-                                        <input id="img_upload" type="file" name="image" accept="image/*">
+                                    <input id="img_upload" type="file" name="image" accept="image/*">
                                 </form>
                             </div>
                             <div class="row">
-                                <button id="predict_btn" class="btn btn-success">PREDICT</button>
+                                <button id="predict_btn" class="btn btn-success btn-lg">PREDICT</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-muted">
-                    2 days ago
-                </div>
             </div>
         </div>
     </div>
+
+    {% include 'main/modal.html' %}
 
 {% endblock %}
