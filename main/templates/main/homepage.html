@@ -18,15 +18,18 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
+                            <form id="submit_image_form" method="POST" action="{% url 'main:result' %}"
+                                  enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <label class="btn btn-success col-md-12">
+                                        Select file <input id="img_upload" type="file" name="image" accept="image/*"
+                                                           hidden>
+                                    </label>
+                                </div>
+                            </form>
                             <div class="row">
-                                <form id="submit_image_form" method="POST" action="{% url 'main:result' %}"
-                                      enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    <input id="img_upload" type="file" name="image" accept="image/*">
-                                </form>
-                            </div>
-                            <div class="row">
-                                <button id="predict_btn" class="btn btn-success btn-lg">PREDICT</button>
+                                <button id="predict_btn" class="btn btn-success col-12">PREDICT</button>
                             </div>
                         </div>
                     </div>

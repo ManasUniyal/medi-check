@@ -25,45 +25,46 @@ footer {
     background: white;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-family: 'Fira Sans', sans-serif;
     font-size: 30px;
     text-shadow: 1px 1px 1px #aaa;
     font-weight: 500;
 }
 
-.navbar-custom{
+.navbar-custom {
     background-color: #28282a;
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;
 }
 
-.body-block-container{
+.body-block-container {
     padding: 0px 100px 0px 100px;
     margin-top: 20px;
 }
 
-.body-block-analyze{
+.body-block-analyze {
     -webkit-box-shadow: 3px 3px 5px 5px #fff;
     -moz-box-shadow: 3px 3px 5px 5px #fff;
     box-shadow: 6px 12px 4px #fff;
 }
 
-.upload-block{
+.upload-block {
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.predict_btn_prop{
+.predict_btn_prop {
     margin-top: 10px;
     width: 22vw;
     font-family: 'Roboto', sans-serif;
     font-style: bold;
 }
 
-.style-image{
+.style-image {
     height: 300px;
     width: 300px;
 }
+
