@@ -15,23 +15,27 @@
                         <img class="m-3 card-img-top container justify-content-center img-responsive" id="image"
                              src="{{ prediction.processed_image_url }}" alt="Card image cap">
                     </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <div class="row">
-                                <h1>Diagnosis:</h1>
-                                <p>{{ prediction.get_diagnosis_display }} </p>
-                                <a class="btn btn-primary btn-block btn-lg" href="{% url 'main:home' %}">MAKE ANOTHER
+                    <div class="col-md-6 upload-block">
+                        <div class="card-body ">
+                            <div class="row align-items-center justify-content-center">
+                                <h1 style="white-space: pre-wrap;">Diagnosis: </h1>
+                                <h1 id="prediction-result"
+                                    style="color: red; ">{{ prediction.get_diagnosis_display }} </h1>
+                                <a class="btn btn-primary btn-block btn-lg" style="margin-top:20px ;"
+                                   href="{% url 'main:home' %}">MAKE ANOTHER
                                     PREDICTION</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-muted">
-                    2 days ago
-                </div>
             </div>
         </div>
     </div>
+    <script>
+        var user_name = document.getElementById("prediction-result");
+        if (user_name.innerText === "NORMAL") user_name.style.color = "#00a651"
+        else user_name.style.color = "#ff0000"
+    </script>
 
     {% include 'main/modal.html' %}
 

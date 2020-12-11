@@ -10,25 +10,48 @@
                 <div class="card shadow p-3 mt-4 bg-white rounded border-dark">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img class="card-img style-image img-responsive img-thumbnail"
-                                 src="{{ prediction.uploaded_image_url }} ">
+                            <div class="row align-items-center justify-content-center"><p style="font-size:20px;">
+                                Uploaded Image</p></div>
+                            <div class="row align-items-center justify-content-center"><img
+                                    class="card-img style-image img-responsive img-thumbnail"
+                                    src="{{ prediction.uploaded_image_url }} "></div>
+
                         </div>
-                        <div class="col-md-4">
-                            <img class="card-img style-image img-responsive img-thumbnail"
-                                 src="{{ prediction.processed_image_url }}">
+                        <div class="col-md-4 ">
+                            <div class="row align-items-center justify-content-center"><p style="font-size:20px;">
+                                Result</p></div>
+                            <div class="row align-items-center justify-content-center"><img
+                                    class="card-img style-image img-responsive img-thumbnail"
+                                    src="{{ prediction.processed_image_url }}"></div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h1>Diagnosis: </h1> {{ prediction.get_diagnosis_display }}
-                                <h1>Date: </h1> {{ prediction.date_created }}
+                        <div class="col-md-4 align-items-center justify-content-center">
+                            <div class="card-body " style="white-space: pre-wrap;">
+                                <div class="row align-items-center justify-content-center">
+                                    <h2>Diagnosis: </h2>
+                                    {% if prediction.diagnosis == "COVID19" %}
+                                        <h3 style="color: red">{{ prediction.get_diagnosis_display }}</h3>
+                                    {% elif prediction.diagnosis == "PNEUMONIA" %}
+                                        <h3 style="color: red">{{ prediction.get_diagnosis_display }}</h3>
+                                    {% else %}
+                                        <h3 style="color: green">{{ prediction.get_diagnosis_display }}</h3>
+                                    {% endif %}
+                                </div>
+                                <div class="row align-items-center justify-content-center"><h3>
+                                    Date: </h3> {{ prediction.date_created }}</div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             {% endfor %}
         {% else %}
-            <h1>No history to display</h1>
+            <div class="col-md-12">
+                <h1 class="row  align-items-center justify-content-center" style="height: 80vh;">No history to
+                    display</h1>
+            </div>
         {% endif %}
     </div>
+
+
 
 {% endblock %}
