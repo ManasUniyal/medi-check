@@ -67,3 +67,7 @@ footer {
     height: 300px;
     width: 300px;
 }
+
+.hide{
+    display: none;
+}
