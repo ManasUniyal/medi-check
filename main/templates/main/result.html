@@ -13,15 +13,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <img class="m-3 card-img-top container justify-content-center img-responsive" id="image"
-                             src="{{ prediction.uploaded_image_url }}" alt="Card image cap">
+                             src="{{ prediction.processed_image_url }}" alt="Card image cap">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <div class="row">
                                 <h1>Diagnosis:</h1>
                                 <p>{{ prediction.get_diagnosis_display }} </p>
-                                <h1>Accuracy:</h1>
-                                <p>{{ prediction.accuracy }}</p>
                                 <a class="btn btn-primary btn-block btn-lg" href="{% url 'main:home' %}">MAKE ANOTHER
                                     PREDICTION</a>
                             </div>

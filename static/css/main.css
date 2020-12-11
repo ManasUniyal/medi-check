@@ -7,7 +7,7 @@
     position: relative;
     padding-bottom: 80px; /* height of your footer */
     font-family: 'Roboto', sans-serif;
-    background-color: #eeeeff;
+    background-color: #ffffff;
 }
 
 footer {
@@ -67,4 +67,3 @@ footer {
     height: 300px;
     width: 300px;
 }
-

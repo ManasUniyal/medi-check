@@ -4,24 +4,33 @@
 
 {% block content %}
 
-    <div class="container card shadow p-3 mt-4 bg-white rounded border-dark">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img class="card-img style-image img-responsive img-thumbnail"
-                     src="{% static 'images/default_image.gif' %} " alt="Suresh Dasari Card">
-            </div>
-            <div class="col-md-4">
-                <img class="card-img style-image img-responsive img-thumbnail"
-                     src="{% static 'images/default_image.gif' %} " alt="Suresh Dasari Card">
-            </div>
-            <div class="col-md-4">
-                <div class="card-body">
-                    <h5 class="card-title">Suresh Dasari</h5>
-                    <p class="card-text">Suresh Dasari is a founder and technical lead developer in tutlane.</p>
-                    <a href="#" class="btn btn-primary">View Profile</a>
+    <div class=container">
+        {% if predictions %}
+            {% for prediction in predictions %}
+                <div class="card shadow p-3 mt-4 bg-white rounded border-dark">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img class="card-img style-image img-responsive img-thumbnail"
+                                 src="{{ prediction.uploaded_image_url }} ">
+                        </div>
+                        <div class="col-md-4">
+                            <img class="card-img style-image img-responsive img-thumbnail"
+                                 src="{{ prediction.processed_image_url }}">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Suresh Dasari</h5>
+                                <p class="card-text">Suresh Dasari is a founder and technical lead developer in
+                                    tutlane.</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            {% endfor %}
+        {% else %}
+            <h1>No history to display</h1>
+        {% endif %}
     </div>
 
 {% endblock %}
