@@ -8,7 +8,7 @@
         <div class="container">
             <div class="card text-center shadow-lg rounded border-dark">
                 <div class="card-header">
-                    Upload an X-Ray image for prediction
+                    <span style="font-weight: 700; font-size: 20px;">Upload X-Ray image for prediction</span>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -22,14 +22,14 @@
                                   enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="row">
-                                    <label class="btn btn-success col-md-12">
-                                        Browse an image to upload  <input id="img_upload" type="file" name="image" accept="image/*"
+                                    <label class="btn btn-success btn-lg col-md-12">
+                                        Upload X-Ray  <input id="img_upload" type="file" name="image" accept="image/*"
                                                            hidden>
                                     </label>
                                 </div>
                             </form>
                             <div class="row predict_btn_prop" >
-                                <button id="predict_btn" class="btn btn-primary col-12 hide">Predict</button>
+                                <button id="predict_btn" class="btn btn-primary btn-lg col-12 hide">Predict</button>
                             </div>
                         </div>
                     </div>
